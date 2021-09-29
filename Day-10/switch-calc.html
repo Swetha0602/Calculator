@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script>
+        function doCalc(op){
+            var num1= document.getElementById("no1").value;
+            var num2=document.getElementById("no2").value;
+            var result;
+                switch(op)
+                {
+                    case "add":
+                    result= Number(num1) + Number (num2);
+                    break;
+                    
+                    case "sub":
+                    result= num1 - num2;
+                    break;
+
+                    case "mul":
+                    result= num1 * num2;
+                    break;
+
+                    default:
+                    result= num1 / num2;
+                    break;
+                }  
+
+            document.getElementById("res").innerHTML=result;
+            }
+        doCalc();
+    </script>
+    <style>
+        #calc{
+        width: 25%;
+        border: 5px solid brown;
+        margin: 0 auto;
+        background-color: navajowhite;
+        padding-top: 35px;
+        padding-bottom: 35px;
+}
+h1{
+    font-size: 40px;
+    color:black;
+    text-shadow: 3px 0 yellowgreen;
+}
+body{
+    text-align: center;
+    background-image: url("../Day-9/calc.jpg");
+    background-repeat: no-repeat;
+    
+    color: black;
+}
+</style>
+</head>
+<body>
+    <h1>Calculator using switch statement </h1>
+    <div id="calc">
+        <label for="no1"> Number 1: </label> <input type="text" id="no1" placeholder="Enter first number"><br><br>
+        <label for="no2"> Number 2: </label> <input type="text" id="no2" placeholder="Enter second number"><br><br>
+         <input type="button" value="Add" onclick="doCalc('add')"> &nbsp;
+         <input type="button" value="Sub" onclick="doCalc('sub')"> &nbsp;
+         <input type="button" value="Mul" onclick="doCalc('mul')"> &nbsp;
+         <input type="button" value="Div" onclick="doCalc()"> &nbsp;<br><br>
+         Result: <span id="res"></span>
+         </div>
+</body>
+</html>
